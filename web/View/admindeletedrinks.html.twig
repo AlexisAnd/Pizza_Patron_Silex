@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+{% block main_body %}
+
+<div class="containeradminadd">
+<h1 class="passwordtitle">Supprimer une boisson</h1>
+        <form action="" method="post" id="form">
+            <fieldset>
+                <label for="Name">Id</label>
+                <input type="text" id="name" name="DrinksId" data-name="nom" data-required>
+                <button type="submit" id="button">Valider</button>
+                </fieldset>
+    </form>
+        <table>
+            <thead>
+            <tr>
+                <th>Drinks</th>
+                <th>Id</th>
+            </tr>
+            </thead>
+            {% for drink in drinks %}
+                <tr>
+                    <td>{{ drink.Name }}</td>
+                    <td>{{ drink.DrinksId }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <h3><a href="{{ path('menu') }}">Visualiser les changements</a></h3>
+</div>
+
+{% endblock %}

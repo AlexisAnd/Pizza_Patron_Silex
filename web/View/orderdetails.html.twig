@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_body %}
+<div class="orderdetails">
+<h1 class="aboutustitle">Commande # {{ orderslistone.OrderId }}</h1>
+   
+   <h5>Adresse de livraison:</h5>
+   <ul class="firstlist">
+       <li>{{ orderslistone.Address }}</li>
+       <li>{{ orderslistone.Postal_Code }} {{ orderslistone.City }}</li>
+       <li>{{ orderslistone.Phone }}</li>
+   </ul>
+   <div class="block">
+           {% for orderdetail in orderdetails %}
+        <ul class="secondlist grid-3">
+               <li>{{ orderdetail.Quantity }} x </li>
+               <li> {{ orderdetail.Name }}</li>
+               <li> {{ (orderdetail.Quantity * orderdetail.SalePrice)|number_format(2, '.', ',') }} €</li>
+        </ul>
+        {% endfor %}
+    </div>
+        <ul class="thirdlist">
+        <li>Frais de livraison</li>
+        <li>2.50 €</li>
+    </ul>
+    
+       <ul class="thirdlist">
+        <li>Montant HT</li>
+        <li>{{ (orderslistone.TotalAmount/1.20)|number_format(2, '.', ',') }} €</li>
+        </ul>
+        <ul class="thirdlist">
+        <li>TVA</li>
+        <li>{{ (orderslistone.TotalAmount - orderslistone.TotalAmount/1.20)|number_format(2, '.', ',') }} €</li>
+        </ul>
+        <ul class="thirdlist">
+        <li>Montant Total</li>
+        <li>{{ (2.50 + orderslistone.TotalAmount)|number_format(2, '.', ',') }} €</li>
+    </ul>
+    <div id="ttt" data-path="{{path('cart')}}"> </div>
+<script type="text/javascript" src="{{ asset("class/Settings.class.js", "js")}}"></script>
+    </div>
+{% endblock %}

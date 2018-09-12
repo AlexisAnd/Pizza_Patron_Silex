@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_body %}
+<div class="orderlist">
+    <h1 class="aboutustitle">Vos commandes</h1>
+    {% if orderslist == false %}
+      <h3><a href="{{ path('menu') }}">Vous n'avez pas encore passé commande. Commencez maintenant!</a></h3>
+{% else %}
+  {% for orderlist in orderslist %}
+
+       <a href="{{ path('orderdetails',{OrderId:orderlist.OrderId}) }}">
+        <ul class="lol">
+            <li>Commande #{{ orderlist.OrderId }} </li>
+            <li>effectuée le {{ orderlist.CompleteTimeStamp }}</li>
+            <li>Voir le detail</li>
+           </ul>
+        </a>
+        
+        {% endfor %}
+    <h3><a href="{{ path('menu') }}">Vous souhaitez passer une nouvelle commande? Cliquez ici!</a></h3>
+    {% endif %}
+    <div id="ttt" data-path="{{path('cart')}}"> </div>
+<script type="text/javascript" src="{{ asset("class/Settings.class.js", "js")}}"></script>
+</div>
+{% endblock %}

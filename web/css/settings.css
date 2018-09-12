@@ -1,0 +1,112 @@
+.containersettings {
+    width: 80%;
+    margin: 0 auto; 
+}
+h5 {
+    text-align: center;
+    margin-top: 20px !important;
+}
+.settingsform {
+    text-align: center; 
+    
+}
+.settingsform label {
+    width: 25%;
+    display: inline-block;
+    margin-left: 0;
+    padding-bottom: 2px;
+    
+}
+
+.settingsform input {
+    width: 40%;
+    padding-right: 30px;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+.settingsform2 {
+    text-align: center;
+}
+.settingsform2 label {
+    width: 25%;
+    display: inline-block;
+    padding-bottom: 2px;
+    
+}
+
+.settingsform2 input {
+    width: 40%;
+    padding-right: 30px;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+
+.valid {
+    text-align: right;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 65%;
+}
+.settingsform button {
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #008DC2;
+    color: white;
+}
+.settingsform2 button {
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    background-color: #008DC2;
+    color: white;
+}
+.passwordtitle {
+    text-align: center;
+    padding-top: 60px;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 60px;
+}
+.containersettings a {
+    text-decoration: none;
+}
+.containersettings a:hover {
+    color: #008DC2
+}
+#password {
+    margin-bottom: 120px;
+}
+@media screen and (max-width: 480px) {
+    
+    h5 {
+    
+    margin-left: 0;
+}
+    
+    .settingsform label, .settingsform2 label {
+       width: 25%;
+      text-align: left;
+    margin-left: 0;
+    
+}
+    .settingsform input, .settingsform2 input {
+        width: 40%;
+    }
+    .settingsform button, .settingsform2 button {
+    width: 150px;
+}
+.valid {
+    text-align: center;
+    
+   
+}
+    .settingsform2 button{
+        
+        margin-left: 0;
+    }
+}

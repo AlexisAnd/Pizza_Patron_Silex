@@ -1,0 +1,70 @@
+.orderlist {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 600px;
+    background-color: #f7f7f7;
+}
+.orderlist h3 {
+    text-align: center;
+    padding-top: 30px;
+    
+}
+.lol {
+    margin-top: 50px !important;
+    padding-left: 100px;
+    display: flex;
+    justify-content: center;
+}
+.lol li:first-child {
+    width: 200px;
+}
+.lol li {
+    width: 300px;
+    list-style-type: none;
+}
+.lol li:first-child, .lol li:nth-child(3) {
+    font-weight: bold;
+}
+.orderlist a {
+    text-decoration: none;
+}
+.orderlist a:hover {
+   color: #008DC2;
+}
+.orderlist h3 a{
+    color: #008DC2;
+}
+
+@media screen and (max-width: 480px){
+    
+    .lol{
+        padding-left:0;
+        margin-top:10px;
+    }
+    .lol li:first-child{
+        width: 100px;
+    }
+    .lol li:nth-child(2) {
+        width: 80%;
+    }
+    .lol li:nth-child(3) {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 960px) {
+    
+    .lol{
+        padding-left:0;
+    
+    }
+    .lol li:first-child{
+        width: 70%;
+    }
+    .lol li:nth-child(2) {
+        width: 80%;
+    }
+    .lol li:nth-child(3) {
+        display: none;
+    }
+}

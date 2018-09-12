@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_body %}
+<body>
+   <div class="containerlogin">
+    <h1 class="login_title">Connectez vous:</h1>
+    <div id="issues">{{ loginform.errormessage }}</div>
+    <form action="" method="post" id="loginform">
+           <div>
+            <label for="email">Email</label>
+            <input type="email" name="Email"  data-name="Email" data-required placeholder="Email">
+            </div>
+            <div>
+            <label for="password">Mot de passe</label>
+            <input type="password" name="Password" data-name="Password" placeholder="Mot de Passe">
+            </div>
+            <div class="button_login">
+            <button type="submit" id="buttonlogin">Valider</button>
+            </div>
+    </form>
+    <p class="register"><a href="{{ path('register') }}">Si vous n'avez pas encore de compte? Cliquez ici!</a></p>
+    </div>
+    <script type="text/javascript" src="{{ asset("class/FormValidator.class.js", "js")}}"></script>
+    </body>
+    {% endblock %}

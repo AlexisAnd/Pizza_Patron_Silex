@@ -1,0 +1,292 @@
+header {
+    background-color: #232F3E;
+    width: 100%;
+}
+header .fa-bars {
+    padding-top: 5px;
+    color: white;
+}
+
+.head {
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    margin-bottom:0;
+}
+.yo{
+    position: relative
+}
+.wesh {
+    position: absolute;
+    display: none;
+    background-color: white;
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.yo:hover .wesh {
+    display: block;
+}
+.wesh ul {
+padding-left: 10px;
+}
+.wesh li {
+    list-style-type: none;
+}
+.wesh a {
+    text-decoration: none;
+}
+.wesh a:hover {
+    color: #008DC2;
+}
+#carttotal {
+    margin-right: -60px;
+    align-items: center;
+    width: 150px;
+}
+#cart {
+    color:white;
+    width: 150px;
+}
+.cart {
+    color: white;
+    width: 40px;
+}
+#cart:hover a{
+    color:white;
+}
+
+#cart p {
+    margin-top:10px;
+
+}
+
+.logotitle {
+    display: flex;
+    width: 60%;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'pacifico', 'cursive';
+    color: white;
+    
+}
+
+header img {
+    width: 40px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.logotitle h1 {
+    width: 60%;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.connect, .connected {
+/*    margin-left: 340px;*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.usersettings {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 140px;
+    top:25px;
+    
+}
+.usersettings ul {
+    padding: 5px 0 5px 10px;
+}
+.usersettings ul li {
+    list-style-type: none;
+}
+
+.connect .fa, .connected .fa {
+    margin-right: 5px;
+}
+
+.connected:hover .usersettings {
+    display: block;
+}
+
+.connect p {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 20px;
+}
+.connected p {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 20px;
+}
+.connected a {
+    text-decoration: none;
+}
+.connected a:hover {
+     color: #008DC2;
+}
+.connect a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+  .connect i {
+    margin-top: 10px;
+}
+.navigation > ul {
+    display: flex;
+    justify-content: space-around;
+}
+.show {
+    position: relative;
+}
+nav li a {
+    color: white;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.show:hover .products {
+    display: block;
+}
+nav li {
+    list-style-type: none;
+    font-size: 20px;
+}
+nav li a:hover {
+    color: #353535;
+    background-color: white;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.products {
+    display: none;
+    position: absolute;
+    width: 154px;
+    text-align: left;
+    background-color: white;
+    color: black;
+}
+.products a {
+    color: black;
+}
+.products a:hover {
+    color: #008DC2;
+}
+.hide {
+    display:none;
+}
+#issues {
+    color: red;
+}
+footer {
+    background-color: #232F3E;
+    display: flex;
+}
+
+footer div {
+    width: 50%;
+}
+
+footer img {
+    width:30px;
+}
+
+footer p {
+    font-size: 30px;
+    color: white;
+    padding-left: 30px;
+    font-family: 'Pacifico', cursive;
+}
+
+footer div:nth-child(2) {
+    color: white;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+.fixed2 {
+    position:fixed;
+    top:0;
+    left:0;
+}
+.containervalidation {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    padding-bottom: 280px;
+    text-align: center;
+}
+@media screen and (max-width: 716px){
+    
+  .logotitle {
+        width: 55%;
+      padding-left: 5px;
+    }  
+    .logotitle h1 {
+        width: 500px;
+    } 
+     .logotitle a {
+        display: none;
+    } 
+    header img {
+    width: 15%;
+    }
+    .head {
+    justify-content: space-between;
+    }
+    .allusers {
+        width: 28px;
+    }
+    .allusers p {
+        display:none;
+    }
+    .yo {
+        margin-left: 5px;
+        width: 30px;
+    }
+    .connected {
+        width: 28px;
+    }
+    .connect i {
+    margin-top: 10px;
+}
+    #carttotal {
+        width: 190px;
+    }
+    #carttotal p {
+        width: 50px;
+    }
+    .ordertotal {
+        display: flex;
+        padding-left: 5px;
+    }
+    .ordertotal a {
+        width: 35px;
+    }
+    #cart p {
+        margin-top: 5px;
+    }
+    .cart i:hover {
+        color: #008DC2;
+    }
+}
+@media screen and (min-width: 716px) and (max-width: 960px) {
+    
+  .logotitle {
+        width: 55%;
+      padding-left: 5px;
+    }
+    .logotitle h1 {
+        width: 500px;
+    }
+}

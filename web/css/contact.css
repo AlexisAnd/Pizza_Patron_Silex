@@ -1,0 +1,22 @@
+.container_contact {
+     width: 80%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    padding-bottom: 60px;
+}
+
+.container_contact h1 {
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Lobster', cursive;
+}
+.container_contact i {
+    color: #008DC2;
+}
+.container_contact a {
+    color: #008DC2;
+}
+.container_contact iframe {
+    width: 100%;
+    height: 300px;
+}

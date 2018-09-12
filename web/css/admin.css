@@ -1,0 +1,54 @@
+.containeradminadd {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    margin-bottom: 60px;
+}
+.adminaddform {
+    text-align: center;
+}
+.adminaddform label {
+    width: 150px;
+    display: inline-block;
+    
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.adminaddform input {
+    width: 300px;
+    padding-right: 30px;
+    margin-right: 5px;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+}
+.adminaddform .valid {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 65%;
+}
+.adminaddform button {
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+   
+    text-align: center;
+    background-color: #008DC2;
+    color: white;
+}
+.containeradminadd h3 {
+    text-align: center;
+}
+.containeradminadd a {
+    text-decoration: none;
+}
+
+.containeradminadd a:hover {
+    color: #008DC2;
+}
+.containeradminadd table {
+    margin-bottom: 60px;
+}

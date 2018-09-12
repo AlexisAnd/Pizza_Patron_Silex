@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset("knacss.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("font-awesome/css/font-awesome.min.css", "font") }}">
+    <link rel="stylesheet" href="{{ asset("layout_restaurant.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("menu.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("about_restaurant.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("contact.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("register_restaurant.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("login_restaurant.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("settings.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("orderslist.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("orderdetails.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("payment.css","css") }}">
+    <link rel="stylesheet" href="{{ asset("admin.css","css") }}">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+    <style>
+          #map {
+            width: 300px;
+          }
+    </style>
+    <title>{% block title %} Pizza Patron {% endblock %}</title>
+ </head>
+<body>
+    <header>
+        <div class="head">
+            <div class="yo">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <div class="wesh">
+                     <ul>
+                         <li><a href="{{ path('menu') }}">Menu</a></li>
+                         <li><a href="{{ path('history') }}">A propos de nous</a></li>
+                         <li><a href="{{ path('contact') }}">Nous contacter</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="logotitle">
+            <a href="{{ path('menu') }}"><img src="{{ asset("Pizza_Patrón_Logo.jpg","images") }}"></a>
+            <h1>Pizza Patron</h1>
+            </div>
+            <div class="allusers">
+                {% if userconnect == true %}
+                <div class="connected">
+                    <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+
+                    <p>{{ username }}</p>
+                    {% if useradmin == true %}
+                    <p>, {{ userprivilege }}</p>
+                    {% endif %}
+                     <div class="usersettings hide">
+                        <ul>
+                            <li><a href="{{ path('settings') }}">Paramètres</a></li>
+                            <li><a href="{{ path('orderslist') }}">Vos commandes</a></li>
+                            <li><a href="{{ path('logout') }}">Deconnexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                <div class="connect">
+                    <a href="{{ path('login') }}"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a>
+                    <p><a href="{{ path('login') }}">Se connecter</a></p>
+                </div>
+                {% endif %}
+            </div>
+            <div id="carttotal" class="grid-2">
+                {% if userconnect == true %}
+                    <div id="cart"></div>
+                {% endif %}
+            </div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                {% if userconnect == true %}
+                {% if useradmin == true %}
+                <div class="show">
+                <li><a href="#">Ajouter un produit</a></li>
+                    <div class="products">
+                    <ul>
+                        <li><a href="{{ path('admin') }}">Pizza</a></li>
+                        <li><a href="{{ path('adminpaninis') }}">Paninis</a></li>
+                        <li><a href="{{ path('adminsides') }}">Tex Mex</a></li>
+                        <li><a href="{{ path('admindesserts') }}">Desserts</a></li>
+                        <li><a href="{{ path('admindrinks') }}">Boissons</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="show">
+                <li><a href="#">Modifier un produit</a></li>
+                    <div class="products">
+                    <ul>
+                        <li><a href="{{ path('adminmodify') }}">Pizza</a></li>
+                        <li><a href="{{ path('adminmodifypaninis') }}">Paninis</a></li>
+                        <li><a href="{{ path('adminmodifysides') }}">Tex Mex</a></li>
+                        <li><a href="{{ path('adminmodifydesserts') }}">Desserts</a></li>
+                        <li><a href="{{ path('adminmodifydrinks') }}">Boissons</a></li><li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="show admindelete">
+                <li><a href="#">Supprimer un produit</a></li>
+                    <div class="products">
+                        <ul>
+                            <li><a href="{{ path('admindelete') }}">Pizza</a></li>
+                            <li><a href="{{ path('admindeletepaninis') }}">Paninis</a></li>
+                            <li><a href="{{ path('admindeletesides') }}">Tex Mex</a></li>
+                            <li><a href="{{ path('admindeletedesserts') }}">Desserts</a></li>
+                            <li><a href="{{ path('admindeletedrinks') }}">Boissons</a></li>
+                            {% endif %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    {% block main_body %}
+
+    {% endblock %}
+    
+    <footer>
+          <div>
+              <p><img src="{{ asset("Pizza_Patrón_Logo.jpg","images") }}">Pizza Patron</p>
+           </div>
+          <div>
+            <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+            <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+            <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+           </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+.containerregister {
+     width: 60%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.containerregister h1 {
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom:50px;
+    font-family: 'Lobster', cursive;
+}
+.containerregister h4 {
+    text-align:left;
+}
+#issues li {
+    list-style-type: none;
+    text-align: left;
+    color: red;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+#registerform label {
+   width: 20%;
+    display: inline-block;
+    text-align: left;
+}
+
+#registerform input {
+    width: 55%;
+    padding-right: 30px;
+    margin-right: 45px;
+    vertical-align: middle;
+}
+.connectsucces p {
+    color: green;
+}
+#registerform .button {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 117px;
+}
+#registerform button {
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #008DC2;
+    color: white;
+}
+@media screen and (max-width: 480px){
+    .containerregister{
+        width:90%;
+    }
+    #registerform label {
+    display: None;
+    
+}
+    #registerform input {
+    margin-bottom: 15px;
+    
+}
+    #registerform .button {
+    text-align: center;
+    margin-right: 0;
+}
+}

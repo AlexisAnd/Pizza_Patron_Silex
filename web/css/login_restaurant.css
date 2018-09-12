@@ -1,0 +1,92 @@
+
+.containerlogin {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+.login_title {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom:100px;
+    font-family: 'Lobster', cursive;
+}
+ 
+.register {
+    color: #232F3E;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.register a {
+    color: #232F3E;
+    text-decoration: none;
+}
+.register a:hover {
+    color: #008DC2;
+}
+#loginform {
+    display: flex;
+    flex-direction: column;
+}
+#loginform div label {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+}
+
+#loginform div input {
+    width: 250px;
+    padding-right: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.button_login {
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 183px;
+    margin-bottom: 100px;
+    
+    
+}
+#buttonlogin {
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #008DC2;
+    color: white;
+}
+@media screen and (max-width: 480px){
+   .login_title {
+    
+    margin-bottom:50px;
+    
+    }
+    .containerlogin{
+        width:90%;
+    }
+    #loginform div label {
+    
+    display: none;
+}
+    #loginform div input{
+        margin-bottom: 15px;
+    }
+    .button_login {
+        margin-left: 106px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 960px) {
+    #loginform div label {
+        width: 25%;
+        
+    }
+
+    #loginform div input {
+        width: 55%;
+
+    }
+}

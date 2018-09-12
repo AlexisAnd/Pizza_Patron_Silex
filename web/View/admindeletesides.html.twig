@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+{% block main_body %}
+<div class="containeradminadd">
+<h1 class="passwordtitle">Supprimer un tex-mex</h1>
+        <form action="" method="post" id="form">
+            <fieldset>
+                <label for="Name">Id</label>
+                <input type="text" id="name" name="SideId" data-name="nom" data-required>
+                <button type="submit" id="button">Valider</button>
+                </fieldset>
+    </form>
+        <table>
+            <thead>
+            <tr>
+                <th>Tex Mex</th>
+                <th>Id</th>
+            </tr>
+            </thead>
+            {% for side in sides %}
+                <tr>
+                    <td>{{ side.Name }}</td>
+                    <td>{{ side.SideId }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <h3><a href="{{ path('menu') }}">Visualiser les changements</a></h3>
+</div>
+
+{% endblock %}

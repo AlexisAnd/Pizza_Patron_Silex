@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+{% block main_body %}
+    <div class="containeradminadd">
+    <h1 class="passwordtitle">Modifier le produit</h1>
+
+    <form action="" method="post"  class="adminaddform">
+        <fieldset>
+
+            <label for="Name">Nom</label>
+            <input type="text" id="name" name="Name" data-name="nom" data-required value="{{pizzas.Name }}">
+            <label for="Description">Description</label>
+            <input type="text" id="Description" name="Description" data-name="description" data-required value="{{pizzas.Description }}">
+            <label for="">Prix</label>
+            <input type="text" id="Price" name="SalePrice" data-name="prix" data-required value="{{pizzas.SalePrice }}">
+            <label for="">Prix Pizza Senior</label>
+            <input type="text" id="Price" name="SalePriceSenor" data-name="prix" data-required value="{{pizzas.SalePriceSenor }}">
+            <label for="">Prix Pizza Mega</label>
+            <input type="text" id="Price" name="SalePriceMega" data-name="prix" data-required value="{{pizzas.SalePriceMega }}">
+            {% for pizza in pizzas %}
+            <input type="hidden" name="MealId" value="{{ pizzas.MealId }}" />
+                {%  endfor %}
+            <button type="submit" id="button">Valider</button>
+        </fieldset>
+    </form>
+<h3><a href="{{ path('menu') }}">Visualiser les changements</a></h3>
+</div>
+{%  endblock %}

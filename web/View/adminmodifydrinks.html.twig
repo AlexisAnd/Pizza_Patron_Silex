@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+{% block main_body %}
+<div class=containeradminadd>
+   <h1 class=passwordtitle>Cartes des boissons</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for drink in drinks %}
+            <tr>
+                <td>{{ drink.Name }}</td>
+                <td>{{ drink.SalePrice }} euros</td>
+                <td><a href="{{ path('modifydrinks',{DrinksId:drink.DrinksId}) }}" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h3><a href="{{ path('menu') }}">Visualiser les changements</a></h3>
+</div>
+{%  endblock %}

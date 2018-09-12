@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+{% block main_body %}
+<div class=containeradminadd>
+   <h1 class=passwordtitle>Cartes des paninis</h1>
+    <table>
+        
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix Junior</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for panini in paninis %}
+            <tr>
+                <td>{{ panini.Name }}</td>
+                <td>{{ panini.Description }}</td>
+                <td>{{ panini.SalePrice }} euros</td>
+                <td><a href="{{ path('modifypaninis',{PaninisId:panini.PaninisId}) }}" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h3><a href="{{ path('menu') }}">Visualiser les changements</a></h3>
+</div>
+{%  endblock %}

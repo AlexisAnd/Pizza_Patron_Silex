@@ -1,0 +1,95 @@
+.orderdetails {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    min-height: 560px;
+    margin-bottom: 40px;
+}
+.orderdetails h1 {
+    padding-top: 50px;
+}
+.orderdetails h5 {
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.firstlist {
+    text-align: left;
+    margin-left: 50px;
+    padding-left: 0;
+    margin-top: 0px;
+}
+
+.orderdetails ul li {
+    list-style-type: none;
+}
+.block{
+    border-bottom: lightgrey 1px solid;
+    border-top: lightgrey 1px solid;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.secondlist {
+    text-align: center;
+    padding-left:0;
+}
+.secondlist li:first-child {
+    text-align: left;
+    width: 40px;
+}
+.secondlist li:nth-child(2) {
+    text-align: left;
+    padding-left: 0;
+    width: 65%;
+}
+.secondlist li:nth-child(3) {
+    width: 20%;
+    text-align: right;
+    font-weight: bold;
+}
+.thirdlist {
+    width: 50%;
+    text-align: center;
+    margin-left: 170px;
+}
+.thirdlist li {
+    line-height: 1px;
+    padding-bottom: 2px;
+}
+.thirdlist li:first-child {
+    text-align: left;
+}
+.thirdlist li:nth-child(2) {
+    text-align: right;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 960px){
+    
+    .orderdetails {
+    width: 90%;
+    }
+    .block{
+        width: 70%;
+    }
+    .secondlist {
+        display: flex;
+    }
+    .thirdlist {
+        width: 78%;
+    display: flex;
+    margin-left: 30px;
+}
+    .thirdlist li {
+    line-height: 1.4em;
+}
+    .thirdlist li:first-child {
+    width: 260px;
+}
+    .thirdlist li:nth-child(2) {
+    width: 70px;
+} 
+}

@@ -1,0 +1,58 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_body %}
+<div class="container_payment">
+  <div class="grid-2">
+   <div class="address2 grid-2">
+      <div class="infoscust">
+       <h1 class="payment_title">Votre adresse de livraison: </h1>
+        <ul>
+            <li>{{ custinfos.FirstName }} {{ custinfos.LastName }}</li>
+            <li>{{ custinfos.Address }}</li>
+            <li>{{ custinfos.Postal_Code }} {{ custinfos.City }}</li>
+            <li>{{ custinfos.Phone }}</li>
+        </ul>
+        <a href="{{ path('settings') }}">Voulez vous modifier l'adresse de livraion? Cliquez ici.</a>
+       </div>
+   <div id="map"></div>
+    </div>
+    <div id="basket2">
+        <h3>Votre panier</h3>
+        {% for order in orderline %}
+            <ul class="list">
+              <li class="payment">{{ order.Quantity }}x</li>
+              <li class="payment">{{ order.Name }}</li>
+              <li class="payment">{{ (order.SalePrice * order.Quantity)|number_format(2, '.', ',') }} €</li>
+            </ul>
+        {% endfor %}
+            <ul class="fee">
+               <li>Frais de livraison</li>
+               <li>2.50€</li>
+            </ul>
+              <ul class="sum">
+               <li>Montant HT</li>
+               <li>{{ (ordertotal.Total/1.20)|number_format(2, '.', ',') }} €</li>
+               </ul>
+                <ul class="sum">
+                <li>TVA</li>
+                <li>{{ (ordertotal.Total - ordertotal.Total/1.20)|number_format(2, '.', ',') }} €</li>
+                 </ul>
+                <ul class="sum">
+                <li>Montant Total</li>
+                <li>{{ (2.50 + ordertotal.Total)|number_format(2, '.', ',')}}€</li>
+             </ul>
+             <a href="{{ path('menu') }}">Modifier votre commande?</a>
+    </div>
+</div>
+
+<div class="pay">
+<a href="{{ path('validation') }}" id="validation">Valider la commande</a>
+</div>
+</div>
+
+
+<div id="location" data-index="{{ custinfos.Address }}"></div>
+<div id="ttt" data-path="{{path('cart')}}"> </div>
+<script type="text/javascript" src="{{ asset("class/Settings.class.js", "js")}}"></script>
+<script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1b9EYo_tQe8cXKh72PR0G1sGUad6bx9s&callback=initMap"></script>
+{% endblock %}

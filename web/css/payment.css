@@ -1,0 +1,73 @@
+.container_payment{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    margin-bottom: 60px;
+}
+.address2 {
+    width: 70%;
+}
+.address2 ul {
+    margin-bottom: 30px;
+}
+.address2 li {
+    list-style-type: none;
+    font-size: 25px;
+}
+.container_payment #panier {
+    margin-top: 0;
+    margin-bottom: 100px;
+}
+.payment_title {
+   text-align: center;
+    padding-top: 30px;
+    margin-bottom:70px;
+    font-family: 'Lobster', cursive;
+}
+#map {
+    height: 200px;
+}
+.container_payment a {
+    text-decoration: none;
+    font-weight: bold;
+}
+#validation{
+    margin-bottom: 40px;
+}
+.container_payment a:hover {
+    color: #008DC2;
+}
+
+@media screen and (max-width: 480px){
+    .payment_title {
+        margin-bottom: 30px;
+    }
+    .address2 {
+    width: 100%;
+    }
+    #map {
+    margin: 20px 0 20px 0;
+    width: 80%;
+    }
+    .infoscust {
+        text-align: center;
+    }
+    #basket2 {
+        width: 100%;
+        margin-top: 30px;
+    }
+   
+    #basket2 a {
+        margin: 20px 0 20px 40px;
+    }
+    .pay a{
+    padding: 0;
+    }
+    .containervalidation .passwordtitle {
+        font-size: 25px;
+    }
+    .containervalidation p {
+        font-size: 12px;
+    }
+}
+

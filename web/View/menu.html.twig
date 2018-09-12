@@ -1,0 +1,138 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_body %}
+    <div class="imagebackground">
+        <h1>Bienvenue</h1>
+        <p>Votre pizza napolitaine chez vous à Paris en 30 minutes!</p>
+    </div>
+    <body>
+       <div class="links">
+                <ul class="lists">
+                    <li><a href="#pizzas">Pizzas</a></li>
+                    <li><a href="#paninis">Paninis</a></li>
+                    <li><a href="#tex_mex">Tex Mex</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                    <li><a href="#drinks">Boissons</a></li>
+                </ul>
+            </div>
+        <div class="containermenu grid-2">
+             <div class="menu">
+                      <h1 class="titlemenu">Pizzas</h1>
+                       <div id="pizzas" class="">
+                                {% for pizza in pizzas %}
+                                <div class="itempizza grid-2">
+                               <div class="product">
+                                <h3 id="pizza">{{ pizza.Name }}</h3>
+                                <p data-name="{{ pizza.Description }}">{{ pizza.Description}}</p>
+                               </div>
+                               <div class="price">
+                                   <div class="pizzaprice" data-quantity="1" data-price="{{ pizza.SalePrice }}" data-index="{{ pizza.MealId }}" data-name="{{ pizza.Name }}">
+                                       <p>Junior </p><p>{{ pizza.SalePrice|number_format(2, '.', ',')}}€ </p>
+                                       {% if userconnect == true %}
+                                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                       {% endif %}
+                                   </div>
+                                   <div class="pizzapriceS" data-quantity="1" data-price="{{ pizza.SalePriceSenor }}" data-index="{{ pizza.MealId }}" data-name="{{ pizza.Name }}" >
+                                       <p>Senor </p><p>{{ pizza.SalePriceSenor|number_format(2, '.', ',')}}€ </p>
+                                       {% if userconnect == true %}
+                                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                       {% endif %}
+                                   </div>
+                                   <div class="pizzapriceM" data-quantity="1" data-price="{{ pizza.SalePriceMega }}" data-index="{{ pizza.MealId }}" data-name="{{ pizza.Name }}">
+                                       <p>Mega </p><p>{{ pizza.SalePriceMega|number_format(2, '.', ',')}}€ </p>
+                                       {% if userconnect == true %}
+                                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                       {% endif %}
+                                   </div>
+                               </div>
+                               </div>
+                                {% endfor %}
+                       </div>
+                       <h1 class="titlemenu">Paninis</h1>
+                       <div id="paninis" class="grid-2">
+                           {% for panini in paninis %}
+                           <div class="item grid-2" data-quantity="1" data-price="{{ panini.SalePrice }}"
+                                        data-paninis="{{ panini.PaninisId }}" data-name="{{ panini.Name }}">
+                             <div class="product">
+                                <h3>{{ panini.Name }}</h3>
+                                <p>{{ panini.Description }}</p>
+                               </div>
+                               <div class="prices">
+                                   <p>{{ panini.SalePrice|number_format(2, '.', ',') }} €
+                                    {% if userconnect == true %}
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    {% endif %}</p>
+                               </div>
+                           </div>
+                            {% endfor %}
+                       </div>
+                       <h1 class="titlemenu">Les Tex-Mex</h1>
+                       <div id="sides" class="grid-2">
+                           {% for side in sides %}
+                            <div class="item grid-2" data-quantity="1" data-price="{{ side.SalePrice }}"
+                                    data-sides="{{ side.SideId }}" data-name="{{ side.Name }}">
+                             <div class="product">
+                                <p>{{ side.Name }}</p>
+                           </div>
+                               <div class="prices">
+                                   <p>{{ side.SalePrice|number_format(2, '.', ',') }} €
+                                   {% if userconnect == true %}
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    {% endif %}
+                                   </p>
+                               </div>
+                           </div>
+                               {% endfor %}
+                       </div>
+                       <h1 class="titlemenu">Desserts</h1>
+                       <div id="desserts" class="grid-2">
+                           {% for dessert in desserts %}
+                            <div class="item grid-2" data-quantity="1" data-price="{{ dessert.SalePrice }}"
+                                                 data-desserts="{{ dessert.DessertId }}" data-name="{{ dessert.Name }}">
+                             <div class="product">
+                                <p id="color">{{ dessert.Name }}</p>
+                               </div>
+                               <div class="prices">
+                                   <p>{{ dessert.SalePrice|number_format(2, '.', ',') }} €
+                                   {% if userconnect == true %}
+                                   <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                   {% endif %}
+                                   </p>
+                               </div>
+                           </div>
+                            {% endfor %}
+                       </div>
+                       <h1 class="titlemenu">Boissons</h1>
+                       <div id="drinks" class="grid-2">
+                           {% for drink in drinks %}
+                            <div class="item grid-2" data-quantity="1" data-price="{{ drink.SalePrice }}"
+                                 data-drinks="{{ drink.DrinksId }}" data-name="{{ drink.Name }}">
+                             <div class="product">
+                                <p>{{ drink.Name }}</p>
+                               </div>
+                               <div class="prices">
+                                   <p>{{ drink.SalePrice|number_format(2, '.', ',') }} €
+                                {% if userconnect == true %}                                                         
+                                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                 {% endif %}
+                                   </p>
+                               </div>
+                           </div>
+                            {% endfor %}
+                        </div>
+             </div>
+             <div class="basket">
+             {% if userconnect == false %}
+                <a href="{{ path('login') }}">Vous devez être connecté à votre compte pour commander.</a>
+             {% else %}
+             <div id="panier"></div>
+             {% endif %}
+             </div>
+        </div>
+        <div id="abc" data-path="{{path('order')}}"> </div>
+        <div id="ttt" data-path="{{path('cart')}}"> </div>
+    <script src="{{ asset("js/class/Menu.class.js") }}"></script>
+    </body>
+{% endblock %}
+    
+    

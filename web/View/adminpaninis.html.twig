@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+{% block main_body %}
+<div class="containeradminadd">
+    <h1 class="passwordtitle">Ajouter un panini</h1>
+<div id="issues"></div>
+    <form action="" method="post" class="adminaddform">
+        <div>
+        <label for="Name">Nom</label>
+        <input type="text" id="name" data-name="nom" data-required>
+        </div>
+        <div>
+        <label for="name">Description</label>
+        <input type="text" id="Description" name="Description" data-name="description" data-required>
+        </div>
+        <div>
+        <label for="Address">Prix</label>
+        <input type="text" id="Price" name="SalePrice" data-name="prix" data-required>
+        </div>
+        <div class="valid">
+            <button type="submit" id="button">Valider</button>
+        </div>
+    </form>
+    
+    <h3><a href="{{ path('menu') }}">Visualiser les changements</a></h3>
+</div>
+<script type="text/javascript" src="{{ asset("class/FormValidator.class.js", "js")}}"></script>
+{% endblock %}

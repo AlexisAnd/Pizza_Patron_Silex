@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+{% block main_body %}
+<div class=containeradminadd>
+<h1 class=passwordtitle>Cartes des pizzas</h1>
+<div class="issues"></div>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix Junior</th>
+            <th>Prix Senior</th>
+            <th>Prix Mega</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for pizza in pizzas %}
+    <tr>
+        <td>{{ pizza.Name }}</td>
+        <td>{{ pizza.Description }}</td>
+        <td>{{ pizza.SalePrice }} euros</td>
+        <td>{{ pizza.SalePriceSenor }} euros</td>
+        <td>{{ pizza.SalePriceMega }} euros</td>
+        <td><a href="{{ path('adminmodifypizzas') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        
+    </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h3><a href="{{ path('menu') }}">Visualiser les changements</a></h3>
+</div>
+
+{%  endblock %}

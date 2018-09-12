@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_body %}
+<body>
+<div class="containersettings">
+<h1 class="aboutustitle">Votre Compte</h1>
+<div class="adress">
+<h5>Voulez vous modifier vos coordonnées?</h5>
+
+<div id='issues'></div>
+<form action="" method="post" class="settingsform">
+        <div>
+        <label for="prenom">Prénom</label>
+        <input type="text" name="FirstName" data-name="Prenom" data-required value="{{ custinfos.FirstName }}">
+        </div>
+        <div>
+        <label for="name">Nom</label>
+        <input type="text" name="LastName" data-name="Nom" data-required value="{{ custinfos.LastName }}">
+        </div>
+        <div>
+        <label for="Address">Adresse</label>
+        <input type="text" name="Address" data-name="Addresse" data-required  value="{{ custinfos.Address }}">
+        </div>
+       <div>
+        <label for="ville">Ville</label>
+        <input type="text" name="City" data-name="Ville" data-required value="{{ custinfos.City }}">
+        </div>
+        <div>
+        <label for="postal_code">Code Postal</label>
+        <input type="text" name="Postal_Code" data-name="Code postal" data-required data-number value="{{ custinfos.Postal_Code }}">
+        </div>
+        <div>
+        <label>Téléphone</label>
+        <input type="text" name="Phone" data-name="Telephone" data-number data-required value="{{ custinfos.Phone }}">
+        </div>
+        <div>
+        <label for="email">Email</label>
+        <input type="email" name="Email" data-name="Email" data-required value="{{ custinfos.Email }}">
+       </div>
+        <div class="valid">
+        <button type="submit" id="button">Valider</button>
+        </div>
+</form>
+    </div>
+    <div id="password">
+        <h5><a href="{{ path('password') }}">Voulez vous modifier votre mot de passe?</a></h5>
+    </div>
+    <div id="ttt" data-path="{{path('cart')}}"> </div>
+<script type="text/javascript" src="{{ asset("class/Settings.class.js", "js")}}"></script>
+   <script type="text/javascript" src="{{ asset("class/FormValidator.class.js", "js")}}"></script>
+    </div>
+</body>
+{% endblock %}
